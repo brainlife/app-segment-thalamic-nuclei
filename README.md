@@ -3,6 +3,26 @@
 
 # Segment thalamic nuclei 
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Segments the thalamus into its nuclei with FreeSurfer 7.1.0 segmentThalamicNuclei.sh on an existing FreeSurfer output and returns the FreeSurfer directory with the thalamic nuclei segmentation added.**
+
+Copies the input FreeSurfer subject directory and runs segmentThalamicNuclei.sh (probabilistic atlas built from histology) to add ThalamicNuclei volumes to mri/. Use it when an analysis needs thalamic nuclei such as the LGN, for example the visual white matter ROI Apps. The input must be a completed recon-all output.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.222](https://doi.org/10.25663/brainlife.app.222)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `freesurfer` | `neuro/freesurfer` | yes | The path to the freesurfer datatype |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `neuro/freesurfer` | Output freesurfer datatype including thalamic nuclei segmentation |
+
+Runtime: container `brainlife/freesurfer:7.1.0`; 2 CPUs; 20 GB memory; 0.75 h walltime; needs `FREESURFER_LICENSE`.
+
+<!-- brainlife-app:end -->
+
 This app will segment the thalamus into its multiple components using the developer version of Freesurfer’s segmentThalamicNuclei.sh function (http://freesurfer.net/fswiki/ThalamicNuclei). This app takes a Freesurfer segmentation in as an input and generates .mgz files with the appropriate thalamic segmentation inside the Freesurfer directory as an output. 
 
 ### Authors 
